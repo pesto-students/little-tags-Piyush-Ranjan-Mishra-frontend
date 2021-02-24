@@ -3,8 +3,23 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  position: absolute;
+  left: 2.38%;
+  right: 87.88%;
+  top: 26.61%;
+  bottom: 16.94%;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 70px;
+
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
 }
 
 @media (prefers-reduced-motion: no-preference) {
