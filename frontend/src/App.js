@@ -1,9 +1,11 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HomePageScreen from "./screens/homepage/homepage.screen";
+import HomePageScreen from "./pages/homepage/homepage.screen";
 import NavBarComponent from "./components/navbar.component";
 import FooterComponent from "./components/footer.component";
+import LoginPage from "./pages/signup/signup";
+import NoMatchPage from "./pages/noMatch.page";
 
 function App() {
   return (
@@ -12,8 +14,8 @@ function App() {
         NavBarComponent
         <Switch>
           <Route exact path="/" component={HomePageScreen} />
-          {/* <Route path="/about" component={About} />
-          <Route component={NoMatch} /> */}
+          <Route path="/login" component={LoginPage} />
+          <Route component={NoMatchPage} />
         </Switch>
         FooterComponent
       </Router>
