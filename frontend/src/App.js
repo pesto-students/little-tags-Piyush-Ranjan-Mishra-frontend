@@ -1,5 +1,4 @@
 import "./App.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePageScreen from "./screens/homepage/homepage.screen";
