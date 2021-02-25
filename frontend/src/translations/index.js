@@ -1,5 +1,5 @@
-import messages_hi from "./translations/hi.json";
-import messages_en from "./translations/en.json";
+import messages_hi from "./hi.json";
+import messages_en from "./en.json";
 
 const translations = {
   hi: messages_hi,
