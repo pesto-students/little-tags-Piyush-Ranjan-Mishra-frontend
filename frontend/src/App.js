@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePageScreen from "./pages/homepage/homepage.screen";
 import NavBarComponent from "./components/navbar.component";
 import FooterComponent from "./components/footer.component";
-import LoginPage from "./pages/signup/signup";
+import LoginPage from "./pages/signup/signup.page";
 import NoMatchPage from "./pages/noMatch.page";
 
 function App() {
