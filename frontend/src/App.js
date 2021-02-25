@@ -5,7 +5,6 @@ import NavBarComponent from "./components/navbar.component";
 import FooterComponent from "./components/footer.component";
 import LoginPage from "./pages/signup/signup.page";
 import NoMatchPage from "./pages/noMatch.page";
-import {IntlProvider} from "react-intl";
 
 function App() {
   return (

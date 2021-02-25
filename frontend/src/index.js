@@ -1,17 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-snapshot";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { IntlProvider } from "react-intl";
 import translations from "./translations";
+import wrapperComponent from "./components/wrapper.component";
 
 const language = navigator.language.split(/[-_]/)[0]; // language without region code
 
-ReactDOM.render(
+render(
   <React.StrictMode>
     <IntlProvider locale={language} messages={translations[language]}>
-      <App />
+      <wrapperComponent>
+        <App />
+      </wrapperComponent>
     </IntlProvider>
   </React.StrictMode>,
   document.getElementById("root")
