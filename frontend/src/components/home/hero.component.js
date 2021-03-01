@@ -5,7 +5,6 @@ import image1 from "../../assets/hero/1.png";
 import image2 from "../../assets/hero/2.png";
 import image3 from "../../assets/hero/3.png";
 import image4 from "../../assets/hero/4.png";
-
 const useStyles = makeStyles((theme) => ({
   carousel: {},
   image: {},

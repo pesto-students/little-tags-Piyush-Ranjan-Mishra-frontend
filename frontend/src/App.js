@@ -11,7 +11,7 @@ import WishlistPage from "./pages/wishlist/wishlist.page";
 import { IntlProvider } from "react-intl";
 import translations from "./translations";
 import { ThemeProvider } from "styled-components";
-import CategoriesGridView from "./components/categoryGridView.component";
+
 function App() {
   const store = useSelector((state) => state);
 
@@ -30,7 +30,6 @@ function App() {
               <Route path="/wishlist" component={WishlistPage} />
               <Route component={NoMatchPage} />
             </Switch>
-            <CategoriesGridView />
             <FooterComponent />
           </Router>
         </React.Fragment>
