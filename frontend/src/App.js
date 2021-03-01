@@ -7,10 +7,11 @@ import NavBarComponent from "./components/navbar.component";
 import FooterComponent from "./components/footer.component";
 import LoginPage from "./pages/signup/signup.page";
 import NoMatchPage from "./pages/noMatch.page";
-import WishlistPage from './pages/wishlist/wishlist.page'
+import WishlistPage from "./pages/wishlist/wishlist.page";
 import { IntlProvider } from "react-intl";
 import translations from "./translations";
 import { ThemeProvider } from "styled-components";
+import CategoriesGridView from "./components/categoryGridView.component";
 function App() {
   const store = useSelector((state) => state);
 
@@ -29,6 +30,7 @@ function App() {
               <Route path="/wishlist" component={WishlistPage} />
               <Route component={NoMatchPage} />
             </Switch>
+            <CategoriesGridView />
             <FooterComponent />
           </Router>
         </React.Fragment>

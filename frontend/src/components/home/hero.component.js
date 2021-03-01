@@ -7,10 +7,8 @@ import image3 from "../../assets/hero/3.png";
 import image4 from "../../assets/hero/4.png";
 
 const useStyles = makeStyles((theme) => ({
-  carousel: {
-  },
-  image: {
-  },
+  carousel: {},
+  image: {},
 }));
 const HeroComponent = () => {
   const classes = useStyles();
