@@ -10,7 +10,7 @@ const HomePageScreen = () => {
       <Helmet title="You Are Doing Great" />
       <HeroComponent />
       <CategoriesGridView />
-      <SecondaryCarousel />
+      {/* <SecondaryCarousel /> */}
     </>
   );
 };
