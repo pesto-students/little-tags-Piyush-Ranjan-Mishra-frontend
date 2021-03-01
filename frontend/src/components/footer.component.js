@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { fade, makeStyles } from "@material-ui/core/styles";
 import { useIntl } from "react-intl";
-import { footerMessage, navbarMessage } from "../translations";
+import { footerMessage } from "../translations";
 import payments from "../assets/payment_options.png";
 import TextField from "@material-ui/core/TextField";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.6em",
     display: "inline",
   },
+  orderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
 }));
 
 const FooterComponent = () => {
@@ -81,6 +86,8 @@ const FooterComponent = () => {
           <Grid item xs={4}>
             <div>
               <h3>{intl.formatMessage(footerMessage.subscribeTitle)}</h3>
+          
+              <div className={classes.search}>
               <form className={classes.root} noValidate autoComplete="off">
                 <TextField
                   type="email"
@@ -88,6 +95,7 @@ const FooterComponent = () => {
                   label={intl.formatMessage(footerMessage.subscribeInput)}
                 />
               </form>
+              </div>
               <div className={classes.social}>
                 {intl.formatMessage(footerMessage.socialMedia)}
 

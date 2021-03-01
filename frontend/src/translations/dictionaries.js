@@ -123,3 +123,34 @@ const footer = {
 };
 
 export const footerMessage = defineMessages(footer);
+
+const login = {
+  signinMessage: {
+    id: "login.signin",
+    defaultMessage: "Sign in with",
+  },
+  or: {
+    id: "login.or",
+    defaultMessage: "Or",
+  },
+  fullName: { id: "login.name", defaultMessage: "Full name" },
+  mobile: {
+    id: "login.mobile",
+    defaultMessage: "Mobile Number",
+  },
+  password: {
+    id: "login.password",
+    defaultMessage: "Password",
+  },
+  register: {
+    id: "login.register",
+    defaultMessage: "Create your account",
+  },
+  terms: {
+    id: "login.tnc",
+    defaultMessage:
+      "By signing up you are agreeing to our Terms, Data Policy and Cookies Policy",
+  },
+};
+
+export const loginMessage = defineMessages(login);
