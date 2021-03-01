@@ -123,3 +123,12 @@ const footer = {
 };
 
 export const footerMessage = defineMessages(footer);
+
+const categories = {
+  header: {
+    id: "categories.header",
+    defaultMessage: "Categories",
+  },
+};
+
+export const categoriesMessage = defineMessages(categories);

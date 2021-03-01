@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import styled from "styled-components";
+import { categoriesMessage } from "../../translations";
+import { useIntl } from "react-intl";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: "10px",
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: "60vw",
   },
   gridListTile: {
-    borderRadius: "5px",
+    borderRadius: "5px !important",
     height: "300px !important",
   },
 }));
@@ -91,10 +93,13 @@ const tileData = [
   },
 ];
 const CategoriesGridView = () => {
+  const intl = useIntl();
   const classes = useStyles();
   return (
     <>
-      <CategoriesHeader>Categories</CategoriesHeader>
+      <CategoriesHeader>
+        {intl.formatMessage(categoriesMessage.header)}
+      </CategoriesHeader>
       <div className={classes.root}>
         <GridList cellHeight={200} className={classes.gridList} cols={3}>
           {tileData.map((tile) => (

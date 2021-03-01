@@ -48,7 +48,7 @@ const FooterComponent = () => {
           alignItems="center"
           spacing={3}
         >
-          <Grid item xs={3}>
+          <Grid item md={4} xs={6}>
             <div>
               <h3>{intl.formatMessage(footerMessage.contactUs)}</h3>
               <p>
@@ -67,7 +67,7 @@ const FooterComponent = () => {
               />
             </div>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item md={4} xs={6}>
             <div>
               <h3>{intl.formatMessage(footerMessage.links)}</h3>
               {Object.keys(categoryList).map((key) => (
@@ -78,7 +78,7 @@ const FooterComponent = () => {
               ))}
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item md={4} xs={12}>
             <div>
               <h3>{intl.formatMessage(footerMessage.subscribeTitle)}</h3>
               <form className={classes.root} noValidate autoComplete="off">
