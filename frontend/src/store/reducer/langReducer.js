@@ -1,7 +1,15 @@
-export default function lang(state = { locale: "en" }, action) {
+const initialState = {
+  locale: "en",
+  languageSupport: {
+    en: "🇬🇧 English",
+    hi: "🇮🇳 हिंदी",
+  },
+};
+
+export default function lang(state = initialState, action) {
   switch (action.type) {
     case "setLang":
-      return { locale: action.value };
+      return { ...state, locale: action.value };
     default:
       return state;
   }

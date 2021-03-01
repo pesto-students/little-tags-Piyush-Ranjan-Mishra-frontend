@@ -137,18 +137,14 @@ const NavBarComponent = () => {
       open={isLocaleMenuOpen}
       onClose={() => handleLocaleMenu()}
     >
-      <MenuItem
-        selected={store.lang.locale === "en"}
-        onClick={(e) => handleLocaleMenu(e, "en")}
-      >
-        🇬🇧 English
-      </MenuItem>
-      <MenuItem
-        selected={store.lang.locale === "hi"}
-        onClick={(e) => handleLocaleMenu(e, "hi")}
-      >
-        🇮🇳 हिंदी
-      </MenuItem>
+      {Object.keys(store.lang.languageSupport).map((key) => (
+        <MenuItem
+          selected={store.lang.locale === key}
+          onClick={(e) => handleLocaleMenu(e, key)}
+        >
+          {store.lang.languageSupport[key]}
+        </MenuItem>
+      ))}
     </Menu>
   );
   const renderMenu = (
