@@ -124,6 +124,7 @@ const footer = {
 
 export const footerMessage = defineMessages(footer);
 
+<<<<<<< HEAD
 const login = {
   signinMessage: {
     id: "login.signin",
@@ -154,3 +155,13 @@ const login = {
 };
 
 export const loginMessage = defineMessages(login);
+=======
+const categories = {
+  header: {
+    id: "categories.header",
+    defaultMessage: "Categories",
+  },
+};
+
+export const categoriesMessage = defineMessages(categories);
+>>>>>>> dev-2

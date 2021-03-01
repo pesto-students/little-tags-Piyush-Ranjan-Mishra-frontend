@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import loginPic from "../../assets/login.jpeg";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -134,5 +135,12 @@ const LoginPage = () => {
     </>
   );
 };
+=======
+const LoginPage = () => {
+    return (<><div>
+        <h1>LoginPage</h1>
+        </div></>)
+}
+>>>>>>> dev-2
 
 export default LoginPage;

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { fade, makeStyles } from "@material-ui/core/styles";
 import { useIntl } from "react-intl";
 import { footerMessage } from "../translations";
+=======
+import { makeStyles } from "@material-ui/core/styles";
+import { useIntl } from "react-intl";
+import { footerMessage, navbarMessage } from "../translations";
+>>>>>>> dev-2
 import payments from "../assets/payment_options.png";
 import TextField from "@material-ui/core/TextField";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -31,11 +37,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.6em",
     display: "inline",
   },
+<<<<<<< HEAD
   orderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
+=======
+>>>>>>> dev-2
 }));
 
 const FooterComponent = () => {
@@ -53,7 +62,11 @@ const FooterComponent = () => {
           alignItems="center"
           spacing={3}
         >
+<<<<<<< HEAD
           <Grid item xs={3}>
+=======
+          <Grid item md={4} xs={6}>
+>>>>>>> dev-2
             <div>
               <h3>{intl.formatMessage(footerMessage.contactUs)}</h3>
               <p>
@@ -72,7 +85,11 @@ const FooterComponent = () => {
               />
             </div>
           </Grid>
+<<<<<<< HEAD
           <Grid item xs={2}>
+=======
+          <Grid item md={4} xs={6}>
+>>>>>>> dev-2
             <div>
               <h3>{intl.formatMessage(footerMessage.links)}</h3>
               {Object.keys(categoryList).map((key) => (
@@ -83,11 +100,17 @@ const FooterComponent = () => {
               ))}
             </div>
           </Grid>
+<<<<<<< HEAD
           <Grid item xs={4}>
             <div>
               <h3>{intl.formatMessage(footerMessage.subscribeTitle)}</h3>
           
               <div className={classes.search}>
+=======
+          <Grid item md={4} xs={12}>
+            <div>
+              <h3>{intl.formatMessage(footerMessage.subscribeTitle)}</h3>
+>>>>>>> dev-2
               <form className={classes.root} noValidate autoComplete="off">
                 <TextField
                   type="email"
@@ -95,7 +118,10 @@ const FooterComponent = () => {
                   label={intl.formatMessage(footerMessage.subscribeInput)}
                 />
               </form>
+<<<<<<< HEAD
               </div>
+=======
+>>>>>>> dev-2
               <div className={classes.social}>
                 {intl.formatMessage(footerMessage.socialMedia)}
 
