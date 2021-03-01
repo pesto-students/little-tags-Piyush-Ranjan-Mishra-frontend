@@ -7,13 +7,20 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import TextField from "@material-ui/core/TextField";
-import { SButton } from "../../components/styled/styled";
-
+import styled from "styled-components";
+// import { SButton } from "../../components/styled/styled";
+​
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage: `url(${loginPic})`,
     margin: "auto",
     padding: "3em 0px",
+    width: "100%",
+    display: "flex",
+    flexFlow: "flex-end",
+  },
+  body1: {
+    textAlign: "center",
   },
   grow: {
     flexGrow: 1,
@@ -25,23 +32,26 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px 30px",
   },
   social: {
-    color: "#C98740",
+    color: "#54514e",
     border: "1px solid",
     margin: "auto",
     borderRadius: "5px",
+    textAlign: "center !important",
   },
   field: {
+    width: "100%",
     "& .MuiTextField-root": {
-      color: "#C98740",
+      color: "#54514e",
       margin: theme.spacing(1),
     },
   },
   button: {
     padding: "10px",
     textAlign: "center",
-    backgroundColor: "#C98740",
+    backgroundColor: "#54514e",
     color: "white",
     borderRadius: "5px",
+    cursor: "pointer",
   },
   terms: {
     borderTop: "1px solid",
@@ -51,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "12px",
   },
 }));
+​
 const LoginPage = () => {
   const classes = useStyles();
   const intl = useIntl();
@@ -67,9 +78,10 @@ const LoginPage = () => {
         <Container maxWidth="sm">
           <Card>
             <div className={classes.cardDiv}>
-              <Typography>
+              <Typography varient="h2" align="center">
                 {intl.formatMessage(loginMessage.signinMessage)}
               </Typography>
+​
               <Grid
                 container
                 direction="row"
@@ -84,7 +96,10 @@ const LoginPage = () => {
                     </div>
                   </Grid>
                 ))}
-                <Grid xs={12}>{intl.formatMessage(loginMessage.or)}</Grid>
+​
+                <Typography varient="h2" align="center">
+                  {intl.formatMessage(loginMessage.or)}
+                </Typography>
                 <form className={classes.field} noValidate autoComplete="off">
                   {Object.keys(field).map((key) => (
                     <Grid xs={12}>
@@ -94,6 +109,7 @@ const LoginPage = () => {
                         id="outlined-basic"
                         label={field[key]}
                         variant="outlined"
+                        fullWidth
                       />
                     </Grid>
                   ))}
@@ -118,5 +134,5 @@ const LoginPage = () => {
     </>
   );
 };
-
+​
 export default LoginPage;
