@@ -25,5 +25,12 @@
   "footer.social-media": "हमारे साथ शामिल हों",
   "footer.links": "श्रेणि",
   "footer.tnc": "नियम व शर्ते",
-  "footer.credit": " ©  2021 VuyIt Enterprise सर्वाधिकार सुरक्षित"
+  "footer.credit": " ©  2021 VuyIt Enterprise सर्वाधिकार सुरक्षित",
+  "login.signin": "लोगिन करे",
+  "login.name": "पूरा नाम",
+  "login.mobile": "मोबाइल नंबर",
+  "login.password": "पासवर्ड",
+  "login.register": "अकाउंट बनाऐ",
+  "login.or": "या",
+  "login.tnc": "लोगिन करके आप हमारी शर्तों, नीति और कुकीज़ नीति से सहमत हैं"
 }
