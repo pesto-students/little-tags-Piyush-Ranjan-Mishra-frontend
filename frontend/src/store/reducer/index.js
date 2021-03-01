@@ -1,8 +1,11 @@
-import { combineReducers } from 'redux'
-import user from './userReducer'
-import counter from './counter'
-
+import { combineReducers } from "redux";
+import user from "./userReducer";
+import lang from "./langReducer";
+import theme from "./themeReducer";
+import category from "./categoryReducer";
 export default combineReducers({
-    user,
-  counter
-})
+  user,
+  lang,
+  theme,
+  category,
+});

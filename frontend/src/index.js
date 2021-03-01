@@ -3,20 +3,15 @@ import { render } from "react-snapshot";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { IntlProvider } from "react-intl";
-import translations from "./translations";
-import wrapperComponent from "./components/wrapper.component";
-
-const language = navigator.language.split(/[-_]/)[0]; // language without region code
+import store from "./store";
+import { Provider } from "react-redux";
 
 render(
-  <React.StrictMode>
-    <IntlProvider locale={language} messages={translations[language]}>
-      <wrapperComponent>
+  <Provider store={store}>
+    <React.StrictMode>
         <App />
-      </wrapperComponent>
-    </IntlProvider>
-  </React.StrictMode>,
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 

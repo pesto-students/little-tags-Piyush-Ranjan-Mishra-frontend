@@ -12,6 +12,12 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel",
       },
+      {
+        test: /\.(jpg|jpeg|png)$/,
+        use: {
+          loader: "url-loader",
+        },
+      },
     ],
   },
   resolve: {

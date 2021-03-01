@@ -1,8 +1,10 @@
-export default function user(state = {name:'Piyush'}, action) {
-    switch (action.type) {
-      case 'GET_USER':
-        return state
-      default:
-        return state
-    }
+export default function user(state = {}, action) {
+  switch (action.type) {
+    case "LOGIN":
+      return { name: "Piyush" };
+    case "LOGOUT":
+      return {};
+    default:
+      return state;
   }
+}
