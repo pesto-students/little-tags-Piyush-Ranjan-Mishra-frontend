@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 import loginPic from "../../assets/login.jpeg";
+import loginSideImage from "../../assets/loginSideImage.png";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import { useIntl } from "react-intl";
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexFlow: "flex-end",
+    height: "max-height",
   },
   body1: {
     textAlign: "center",
@@ -61,6 +62,11 @@ const useStyles = makeStyles((theme) => ({
     color: "grey",
     fontSize: "12px",
   },
+  loginLeft: {
+    backgroundImage: `url(${loginSideImage})`,
+    padding: "3em 0px",
+    width: "100%",
+  },
 }));
 
 const LoginPage = () => {
@@ -73,9 +79,12 @@ const LoginPage = () => {
     password: intl.formatMessage(loginMessage.password),
   };
   return (
-    <>
-      <div className={classes.root}>
-        <div className={classes.grow}></div>
+    <Grid container className={classes.root}>
+      <Grid item xs={0} sm={2} />
+      <Grid item xs={12} sm={4} className={classes.loginLeft}></Grid>
+      <Grid item xs={12} sm={4}>
+        {/* <div className={classes.root}>
+          <div className={classes.grow}></div> */}
         <Container maxWidth="sm">
           <Card>
             <div className={classes.cardDiv}>
@@ -131,16 +140,11 @@ const LoginPage = () => {
             </Container>
           </Card>
         </Container>
-      </div>
-    </>
+        {/* </div> */}
+      </Grid>
+      <Grid item xs={0} sm={2} />
+    </Grid>
   );
 };
-=======
-const LoginPage = () => {
-    return (<><div>
-        <h1>LoginPage</h1>
-        </div></>)
-}
->>>>>>> dev-2
 
 export default LoginPage;

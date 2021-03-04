@@ -235,11 +235,7 @@ const NavBarComponent = () => {
 
   return (
     <div className={classes.grow}>
-<<<<<<< HEAD
-      <AppBar position="static">
-=======
       <AppBar style={{ backgroundColor: "#333" }} position="static">
->>>>>>> dev-2
         <Toolbar>
           <a href="/">
             <Typography className={classes.title} variant="h4" noWrap href="/">

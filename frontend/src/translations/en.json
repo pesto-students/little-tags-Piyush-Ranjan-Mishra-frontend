@@ -27,16 +27,13 @@
   "footer.links": "Categories",
   "footer.tnc": "Terms & Condition",
   "footer.credit": " ©  2021 VuyIt Enterprise All Right Reserved",
-<<<<<<< HEAD
   "login.signin": "Sign in with",
   "login.name": "Full name",
   "login.mobile": "Mobile Number",
   "login.password": "Password",
   "login.register": "Create your account",
   "login.or" :"Or",
-  "login.tnc": "By signing up you are agreeing to our Terms, Data Policy and Cookies Policy"
+  "login.tnc": "By signing up you are agreeing to our Terms, Data Policy and Cookies Policy",
 
-=======
   "categories.header":"Categories"
->>>>>>> dev-2
 }

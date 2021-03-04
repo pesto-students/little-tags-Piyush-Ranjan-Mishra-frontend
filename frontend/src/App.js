@@ -7,18 +7,12 @@ import NavBarComponent from "./components/navbar.component";
 import FooterComponent from "./components/footer.component";
 import LoginPage from "./pages/signup/signup.page";
 import NoMatchPage from "./pages/noMatch.page";
-<<<<<<< HEAD
-import WishlistPage from './pages/wishlist/wishlist.page'
-import { IntlProvider } from "react-intl";
-import translations from "./translations";
-import { ThemeProvider } from "styled-components";
-=======
 import WishlistPage from "./pages/wishlist/wishlist.page";
+import ProductListPage from "./pages/productlist/productlist.page";
+import ProductPage from "./pages/product/product.page";
 import { IntlProvider } from "react-intl";
 import translations from "./translations";
 import { ThemeProvider } from "styled-components";
-
->>>>>>> dev-2
 function App() {
   const store = useSelector((state) => state);
 
@@ -35,6 +29,19 @@ function App() {
               <Route exact path="/" component={HomePageScreen} />
               <Route path="/login" component={LoginPage} />
               <Route path="/wishlist" component={WishlistPage} />
+              <Route
+                path="/products/:productType"
+                component={ProductListPage}
+              />
+              <Route
+                path="/products/:productType"
+                component={ProductListPage}
+              />
+              <Route
+                path="/product/:productType/:id"
+                exact
+                component={ProductPage}
+              />
               <Route component={NoMatchPage} />
             </Switch>
             <FooterComponent />
