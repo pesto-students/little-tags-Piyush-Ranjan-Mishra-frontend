@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { useIntl } from "react-intl";
-import { footerMessage, navbarMessage } from "../translations";
+import { footerMessage } from "../translations";
 import payments from "../assets/payment_options.png";
 import TextField from "@material-ui/core/TextField";
 import FacebookIcon from "@material-ui/icons/Facebook";
