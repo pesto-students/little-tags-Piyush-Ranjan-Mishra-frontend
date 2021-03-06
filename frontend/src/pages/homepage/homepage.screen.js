@@ -7,7 +7,7 @@ import Helmet from "react-helmet";
 const HomePageScreen = () => {
   return (
     <>
-      <Helmet title="You Are Doing Great" />
+      <Helmet title="Vuyit" />
       <HeroComponent />
       <CategoriesGridView />
       {/* <SecondaryCarousel /> */}

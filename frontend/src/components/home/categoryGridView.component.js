@@ -5,6 +5,7 @@ import GridListTile from "@material-ui/core/GridListTile";
 import styled from "styled-components";
 import { categoriesMessage } from "../../translations";
 import { useIntl } from "react-intl";
+import Box from "@material-ui/core/Box";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: "10px",
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "white",
     fontSize: "2rem",
+    transition: ".5s ease",
     "&:hover": {
       opacity: "0.7",
     },
@@ -113,7 +115,7 @@ const CategoriesGridView = () => {
   const intl = useIntl();
   const classes = useStyles();
   return (
-    <>
+    <Box py={6}>
       <CategoriesHeader>
         {intl.formatMessage(categoriesMessage.header)}
       </CategoriesHeader>
@@ -135,7 +137,7 @@ const CategoriesGridView = () => {
           ))}
         </GridList>
       </div>
-    </>
+    </Box>
   );
 };
 

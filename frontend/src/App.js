@@ -29,19 +29,12 @@ function App() {
               <Route exact path="/" component={HomePageScreen} />
               <Route path="/login" component={LoginPage} />
               <Route path="/wishlist" component={WishlistPage} />
-              <Route
-                path="/products/:productType"
+              {/* <Route
+                path="/product/:productType"
                 component={ProductListPage}
-              />
-              <Route
-                path="/products/:productType"
-                component={ProductListPage}
-              />
-              <Route
-                path="/product/:productType/:id"
-                exact
-                component={ProductPage}
-              />
+              />*/}
+              <Route path="/productlist" component={ProductListPage} />
+              <Route path="/product/" exact component={ProductPage} />
               <Route component={NoMatchPage} />
             </Switch>
             <FooterComponent />
