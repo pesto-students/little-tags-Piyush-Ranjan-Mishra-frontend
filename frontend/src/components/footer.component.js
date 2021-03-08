@@ -71,7 +71,7 @@ const FooterComponent = () => {
             <div>
               <h3>{intl.formatMessage(footerMessage.links)}</h3>
               {Object.keys(categoryList).map((key) => (
-                <a href={`/categories:${key}`}>
+                <a href={`/categories:${key}`} key={key}>
                   {" "}
                   <p>{intl.formatMessage({ id: categoryList[key] })}</p>
                 </a>
