@@ -1,6 +1,7 @@
 # Branch to trigger tests on develop
 
 # Contents
+
 - [About](#Vuyit)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
@@ -18,37 +19,36 @@
   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extension for consistent code formatting
   - [tslint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) extension for consistent code style
   - [styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components) extension for [styled-components](https://www.styled-components.com/) intellisense
- 
+
 # Getting started
 
 With all the prereqs installed:
 
 1.  clone this repo,
 2.  `cd` into it and run `yarn install`. This will install all the node dependencies we need for development.
-3.  Run `yarn start`  to start the react dev server in specified environment.
-
+3.  Run `yarn start` to start the react dev server in specified environment.
 
 # Vuyit
 
-Vuyit[keen-hamilton-203206.netlify.app/] is ecommerce website built in React.
+[Vuyit](https://keen-hamilton-203206.netlify.app/) is ecommerce website built in React.
 eature list are as follow:
-    - User Login
-    - Product Search Feature
-    - Category page Product with extended filtering by brand, pricing etc
-    - Single Product page with the price, description, rating, images, quantity, add to cart, add to wishlist etc
-    - Wishlist
-    - Checkout (Product review, Address, Payments)
-    - Past Orders
-    - Routes changing upon going to different screens
-    - Mobile responsive
-    - Internationalization and localization
+
+1.  User Login
+2.  Product Search Feature
+3.  Category page Product with extended filtering by brand, pricing etc
+4.  Single Product page with the price, description, rating, images, quantity, add to cart, add to wishlist etc
+5.  Wishlist
+6.  Checkout (Product review, Address, Payments)
+7.  Past Orders
+8.  Routes changing upon going to different screens
+9.  Mobile responsive
+10. Internationalization and localization
 
 # Running tests
 
 ## Unit Tests
 
 - run `yarn unit-test` to run the unit tests
-
 
 ## Cypress Tests
 
