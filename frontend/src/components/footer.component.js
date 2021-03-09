@@ -28,16 +28,33 @@ const useStyles = makeStyles((theme) => ({
     width: "200px",
   },
   social: {
+    width: "90%",
+    margin: "10px",
     fontSize: "1.6em",
-    display: "inline",
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  socialIcon: {
+    margin: "0 10px",
+  },
+  email: {
+    backgroundColor: "white",
+    width: "90%",
+    padding: "0 10px",
+    borderRadius: "10px",
   },
 }));
-
 const FooterComponent = () => {
   const classes = useStyles();
   const intl = useIntl();
   const categoryList = useSelector((state) => state.category.list);
   console.log("category", categoryList);
+  const socialMedia = {
+    "https://twitter.com": <TwitterIcon />,
+    "https://facebook.com": <FacebookIcon />,
+    "https://youtube.com": <YouTubeIcon />,
+    "https://instagram.com": <InstagramIcon />,
+  };
   return (
     <>
       <div className={classes.root}>
@@ -81,8 +98,9 @@ const FooterComponent = () => {
           <Grid item md={4} xs={12}>
             <div>
               <h3>{intl.formatMessage(footerMessage.subscribeTitle)}</h3>
-              <form className={classes.root} noValidate autoComplete="off">
+              <form className={classes.email} noValidate autoComplete="off">
                 <TextField
+                  className={classes.email}
                   type="email"
                   id="standard-basic"
                   label={intl.formatMessage(footerMessage.subscribeInput)}
@@ -90,11 +108,12 @@ const FooterComponent = () => {
               </form>
               <div className={classes.social}>
                 {intl.formatMessage(footerMessage.socialMedia)}
-
-                <FacebookIcon />
-                <TwitterIcon />
-                <YouTubeIcon />
-                <InstagramIcon />
+                <div className={classes.grow}></div>
+                {Object.keys(socialMedia).map((key) => (
+                  <a className={classes.socialIcon} href={key} key>
+                    {socialMedia[key]}
+                  </a>
+                ))}
               </div>
             </div>
           </Grid>

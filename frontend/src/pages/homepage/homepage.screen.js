@@ -1,8 +1,10 @@
-import HeroComponent from "../../components/home/hero.component";
-import CategoriesGridView from "../../components/home/categoryGridView.component";
-import SecondaryCarousel from "../../components/home/secondaryCarousel.component";
-
+import React, { lazy } from 'react';
 import Helmet from "react-helmet";
+
+const HeroComponent = lazy(() => import('../../components/home/hero.component'));
+const CategoriesGridView = lazy(() => import('../../components/home/categoryGridView.component'));
+const SecondaryCarousel = lazy(() => import('../../components/home/secondaryCarousel.component'));
+
 
 const HomePageScreen = () => {
   return (
