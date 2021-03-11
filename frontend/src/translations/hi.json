@@ -33,5 +33,14 @@
   "login.register": "अकाउंट बनाऐ",
   "login.or": "या",
   "login.tnc": "लोगिन करके आप हमारी शर्तों, नीति और कुकीज़ नीति से सहमत हैं",
-  "categories.header":"श्रेणि"
+  "categories.header":"श्रेणि",
+  "product.header": "उत्पाद विस्तार",
+  "product.color": "रंग",
+  "product.size": "आकार",
+  "product.quantity": "मात्रा",
+  "product.shoppingNow": "खरीदारी अब",
+  "product.likeHeader": "आप भी पसंद कर सकते हैं",
+  "products.header": "उत्पाद सूची",
+  "products.brand": "ब्रांड",
+  "products.priceRange": "मूल्य सीमा"
 }

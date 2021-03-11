@@ -13,8 +13,10 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Paper from "@material-ui/core/Paper";
-
+import { useIntl } from "react-intl";
+import { productMessage } from "../../translations";
 function PostDetail() {
+  const intl = useIntl();
   return (
     <Container>
       <Grid container spacing={4}>
@@ -50,12 +52,12 @@ function PostDetail() {
             style={{ display: "flex", justifyContent: "space-evenly" }}
           >
             <div>
-              <h3>COLOR</h3>
+              <h3> {intl.formatMessage(productMessage.color)}</h3>
               <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
                 <div
                   style={{
                     borderRadius: "47px",
-                    backgroundColor: "blue",
+                    backgroundColor: "pink",
                     height: "1rem",
                     width: "1rem",
                     display: "flex",
@@ -73,7 +75,7 @@ function PostDetail() {
                 <div
                   style={{
                     borderRadius: "47px",
-                    backgroundColor: "blue",
+                    backgroundColor: "red",
                     height: "1rem",
                     width: "1rem",
                   }}
@@ -81,7 +83,7 @@ function PostDetail() {
               </Box>
             </div>
             <div>
-              <h3>SIZE</h3>
+              <h3>{intl.formatMessage(productMessage.size)}</h3>
               <ButtonGroup
                 size="small"
                 aria-label="small outlined button group"
@@ -97,7 +99,9 @@ function PostDetail() {
             style={{ display: "flex", justifyContent: "space-evenly" }}
           >
             <div style={{ display: "inline" }}>
-              <h3 style={{ display: "inline" }}>QUANTITY</h3>
+              <h3 style={{ display: "inline" }}>
+                {intl.formatMessage(productMessage.quantity)}
+              </h3>
               <ButtonGroup
                 size="small"
                 aria-label="small outlined button group"
@@ -115,7 +119,7 @@ function PostDetail() {
                 color: "white",
               }}
             >
-              Shopping Now
+              {intl.formatMessage(productMessage.shoppingNow)}
             </Button>
           </Box>
         </Grid>

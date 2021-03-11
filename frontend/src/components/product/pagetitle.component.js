@@ -28,6 +28,7 @@ const useStyles = makeStyles({
 
 function PageTitle(props) {
   const classes = useStyles();
+
   return (
     <div className={classNames(classes.pageTitleBar, classes.textCenter)}>
       <Container>

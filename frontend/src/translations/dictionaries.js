@@ -163,3 +163,49 @@ const categories = {
 };
 
 export const categoriesMessage = defineMessages(categories);
+
+const product = {
+  header: {
+    id: "product.header",
+    defaultMessage: "Product Detail",
+  },
+  color: {
+    id: "product.color",
+    defaultMessage: "COLOR",
+  },
+  size: {
+    id: "product.size",
+    defaultMessage: "SIZE",
+  },
+  quantity: {
+    id: "product.quantity",
+    defaultMessage: "QUANTITY",
+  },
+  shoppingNow: {
+    id: "product.shoppingNow",
+    defaultMessage: "SHOPPING NOW",
+  },
+  likeHeader: {
+    id: "product.likeHeader",
+    defaultMessage: "You Might also Like",
+  },
+};
+
+export const productMessage = defineMessages(product);
+
+const products = {
+  header: {
+    id: "products.header",
+    defaultMessage: "product list",
+  },
+  brand: {
+    id: "products.brand",
+    defaultMessage: "Brand",
+  },
+  priceRange: {
+    id: "products.priceRange",
+    defaultMessage: "Price Range",
+  },
+};
+
+export const productsMessage = defineMessages(products);
