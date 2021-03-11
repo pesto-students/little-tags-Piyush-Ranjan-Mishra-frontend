@@ -13,7 +13,7 @@ import { spacing } from "@material-ui/system";
 import TypoGraphy from "@material-ui/core/Typography";
 import ProductCard from "./productcard.component";
 import Pagination from "@material-ui/lab/Pagination";
-
+import PriceFilter from "./pricefilter.component";
 const useStyles = makeStyles({
   internalContainer: {
     border: "2px solid red",
@@ -84,44 +84,7 @@ function ProductList() {
             </FormGroup>
           </FilterCard>
           <FilterCard>
-            <FormGroup style={{ padding: "1.5rem" }}>
-              <TypoGraphy
-                component="p"
-                style={{ fontSize: "1.3rem", textTransform: "capitalize" }}
-              >
-                Brand
-              </TypoGraphy>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={gilad}
-                    onChange={handleChange}
-                    name="gilad"
-                  />
-                }
-                label="Samsung"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={jason}
-                    onChange={handleChange}
-                    name="jason"
-                  />
-                }
-                label="Videocon"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={antoine}
-                    onChange={handleChange}
-                    name="antoine"
-                  />
-                }
-                label="Sony Bravia"
-              />
-            </FormGroup>
+            <PriceFilter />
           </FilterCard>
           <FilterCard>
             <FormGroup style={{ padding: "1.5rem" }}>

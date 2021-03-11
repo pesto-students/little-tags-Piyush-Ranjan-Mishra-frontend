@@ -10,6 +10,7 @@ import Card from "@material-ui/core/Card";
 import Rating from "@material-ui/lab/Rating";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -21,6 +22,13 @@ const useStyles = makeStyles((theme) => ({
   gridList: {
     width: 500,
     height: 450,
+    [theme.breakpoints.down("xs")]: {
+      display: "flex",
+      flexDirection: "column",
+    },
+    // [theme.breakpoints.up("sm")]: {
+    //   backgroundColor: theme.palette.primary.main,
+    // },
   },
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
