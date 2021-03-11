@@ -8,9 +8,6 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import TextField from "@material-ui/core/TextField";
-import styled from "styled-components";
-// import { SButton } from "../../components/styled/styled";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage: `url(${loginPic})`,
