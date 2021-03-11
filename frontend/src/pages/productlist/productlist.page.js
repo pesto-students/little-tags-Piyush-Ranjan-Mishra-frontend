@@ -1,7 +1,9 @@
-const ProductListPage = ({ match }) => {
+import ProductList from "../../components/productlist/productlist.component";
+
+const ProductListPage = () => {
   return (
     <>
-      <h5>{match.params.productType}</h5>
+      <ProductList />
     </>
   );
 };
