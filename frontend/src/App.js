@@ -21,6 +21,9 @@ const HomePageScreen = lazy(() => import("./pages/homepage/homepage.screen"));
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
     "& > * + *": {
       margin: "auto",
     },

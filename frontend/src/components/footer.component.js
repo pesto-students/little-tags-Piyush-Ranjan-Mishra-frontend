@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     width: "200px",
   },
   social: {
-    width: "90%",
+    width: "70%",
     margin: "10px",
     fontSize: "1.6em",
     display: "flex",
@@ -36,10 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
   socialIcon: {
     margin: "0 10px",
+    color: "white",
   },
   email: {
     backgroundColor: "white",
-    width: "90%",
+    width: "70%",
     padding: "0 10px",
     borderRadius: "10px",
   },
@@ -88,7 +89,7 @@ const FooterComponent = () => {
             <div>
               <h3>{intl.formatMessage(footerMessage.links)}</h3>
               {Object.keys(categoryList).map((key) => (
-                <a href={`/categories:${key}`}>
+                <a href={`/categories:${key}`} style={{ color: "white" }}>
                   {" "}
                   <p>{intl.formatMessage({ id: categoryList[key] })}</p>
                 </a>
@@ -103,7 +104,7 @@ const FooterComponent = () => {
                   className={classes.email}
                   type="email"
                   id="standard-basic"
-                  label={intl.formatMessage(footerMessage.subscribeInput)}
+                  placeholder={intl.formatMessage(footerMessage.subscribeInput)}
                 />
               </form>
               <div className={classes.social}>
@@ -119,7 +120,9 @@ const FooterComponent = () => {
           </Grid>
         </Grid>
         <Container maxWidth="sm">
-          <a href="/terms">{intl.formatMessage(footerMessage.tnc)}</a>
+          <a href="/terms" style={{ color: "white" }}>
+            {intl.formatMessage(footerMessage.tnc)}
+          </a>
           {intl.formatMessage(footerMessage.credit)}
         </Container>
       </div>
