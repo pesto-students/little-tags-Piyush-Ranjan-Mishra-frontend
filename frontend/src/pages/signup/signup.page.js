@@ -1,3 +1,5 @@
+import React from "react";
+
 import loginPic from "../../assets/login.jpeg";
 import loginSideImage from "../../assets/loginSideImage.png";
 import { makeStyles } from "@material-ui/core/styles";
@@ -8,8 +10,8 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import TextField from "@material-ui/core/TextField";
-import styled from "styled-components";
-// import { SButton } from "../../components/styled/styled";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,12 +74,26 @@ const useStyles = makeStyles((theme) => ({
 const LoginPage = () => {
   const classes = useStyles();
   const intl = useIntl();
+  const user = useSelector((state) => state.user);
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   const icons = [<FacebookIcon />, <TwitterIcon />, <FacebookIcon />];
   const field = {
     text: intl.formatMessage(loginMessage.fullName),
     tel: intl.formatMessage(loginMessage.mobile),
     password: intl.formatMessage(loginMessage.password),
   };
+  const handleLogin = (_) => {
+    dispatch({ type: "LOGIN" });
+  };
+
+  React.useEffect(() => {
+    console.log("lohin", user?.name);
+    if (user?.name) {
+      history.goBack();
+    }
+  }, [history, user?.name]);
   return (
     <Grid container className={classes.root}>
       <Grid item xs={0} sm={2} />
@@ -102,7 +118,9 @@ const LoginPage = () => {
                 {icons.map((el) => (
                   <Grid item xs={12 / icons.length}>
                     <div class={classes.social} elevation={1}>
-                      <Container maxWidth="sm">{el}</Container>
+                      <Container maxWidth="sm" onClick={handleLogin}>
+                        {el}
+                      </Container>
                     </div>
                   </Grid>
                 ))}
@@ -125,7 +143,7 @@ const LoginPage = () => {
                   ))}
                 </form>
                 <Grid item xs={12}>
-                  <div className={classes.button}>
+                  <div className={classes.button} onClick={handleLogin}>
                     {intl.formatMessage(loginMessage.register)}
                   </div>
                 </Grid>

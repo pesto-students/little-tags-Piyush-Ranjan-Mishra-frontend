@@ -6,13 +6,17 @@ import { IntlProvider } from "react-intl";
 import translations from "./translations";
 import { makeStyles } from "@material-ui/core/styles";
 
-import CircularProgress from "@material-ui/core/CircularProgress";
 import { ThemeProvider } from "styled-components";
+import { Skeleton } from "@material-ui/lab";
 const NavBarComponent = lazy(() => import("./components/navbar.component"));
 const FooterComponent = lazy(() => import("./components/footer.component"));
 const LoginPage = lazy(() => import("./pages/signup/signup.page"));
 const NoMatchPage = lazy(() => import("./pages/noMatch.page"));
-const WishlistPage = lazy(() => import("./pages/wishlist/wishlist.page"));
+const WishlistPage = lazy(() => import("./pages/Account/WishList.page"));
+const OrderlistPage = lazy(() => import("./pages/Account/OrderList.page"));
+
+const CartlistPage = lazy(() => import("./pages/Account/CartList.page"));
+
 const ProductListPage = lazy(() =>
   import("./pages/productlist/productlist.page")
 );
@@ -31,18 +35,30 @@ function App() {
 
   const store = useSelector((state) => state);
   const renderLoader = () => (
-    <div className={classes.root}>
-      <CircularProgress color="secondary" />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
+      <Skeleton animation="wave" variant="rect" height={50} />
+      <div
+        style={{
+          height: "400px",
+        }}
+      ></div>
+      <Skeleton animation="wave" variant="rect" height={150} />
     </div>
   );
 
   return (
-    <ThemeProvider theme={store.theme}>
-      <IntlProvider
-        locale={store.lang.locale}
-        messages={translations[store.lang.locale]}
-      >
-        <Suspense fallback={renderLoader()}>
+    <Suspense fallback={renderLoader()}>
+      <ThemeProvider theme={store.theme}>
+        <IntlProvider
+          locale={store.lang.locale}
+          messages={translations[store.lang.locale]}
+        >
           <React.Fragment>
             <Router>
               <NavBarComponent />
@@ -50,6 +66,8 @@ function App() {
                 <Route exact path="/" component={HomePageScreen} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/wishlist" component={WishlistPage} />
+                <Route path="/order" component={OrderlistPage} />
+                <Route path="/cart" component={CartlistPage} />
                 <Route
                   path="/products/:productType"
                   component={ProductListPage}
@@ -68,9 +86,9 @@ function App() {
               <FooterComponent />
             </Router>
           </React.Fragment>
-        </Suspense>
-      </IntlProvider>
-    </ThemeProvider>
+        </IntlProvider>
+      </ThemeProvider>
+    </Suspense>
   );
 }
 

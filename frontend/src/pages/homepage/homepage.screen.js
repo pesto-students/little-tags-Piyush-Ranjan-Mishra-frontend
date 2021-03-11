@@ -9,7 +9,7 @@ const SecondaryCarousel = lazy(() => import('../../components/home/secondaryCaro
 const HomePageScreen = () => {
   return (
     <>
-      <Helmet title="You Are Doing Great" />
+      <Helmet title="VuyIt" />
       <HeroComponent />
       <CategoriesGridView />
       {/* <SecondaryCarousel /> */}

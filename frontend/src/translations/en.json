@@ -1,4 +1,5 @@
 {
+  "nav.home":"Home",
   "nav.all": "All",
   "nav.men": "Men",
   "nav.women": "Women",
@@ -15,6 +16,8 @@
   "account.orders": "My Orders",
   "account.wishlist": "My Wishlist",
   "account.cart": "Shopping Cart",
+  "account.addresses": "My Addresses",
+  "accoutn.payments": "My Payments",
   "account.logout": "Logout",
   "account.cart-item": "You have {itemCount, plural, =0 {no items}    one {one item}    other {# items}}",
   "footer.contact-us": "Contact us",

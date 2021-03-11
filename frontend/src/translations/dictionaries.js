@@ -1,6 +1,10 @@
 import { defineMessages } from "react-intl";
 
 const navbar = {
+  home: {
+    id: "nav.home",
+    defaultMessage: "Home",
+  },
   navBarSearch: {
     id: "nav.search-product",
     defaultMessage: "Search Product ..",
@@ -70,6 +74,14 @@ const myAccount = {
   myWishlist: {
     id: "account.wishlist",
     defaultMessage: "My Wishlist",
+  },
+  myAddress: {
+    id: "account.addresses",
+    defaultMessage: "My Addresses",
+  },
+  myPayments: {
+    id: "accoutn.payments",
+    defaultMessage: "Payments",
   },
   logout: {
     id: "account.logout",
