@@ -14,6 +14,8 @@ import TypoGraphy from "@material-ui/core/Typography";
 import ProductCard from "./productcard.component";
 import Pagination from "@material-ui/lab/Pagination";
 import PriceFilter from "./pricefilter.component";
+import { useIntl } from "react-intl";
+import { productsMessage } from "../../translations";
 const useStyles = makeStyles({
   internalContainer: {
     border: "2px solid red",
@@ -39,17 +41,18 @@ function ProductList() {
   const { gilad, jason, antoine } = state;
   const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
   const classes = useStyles();
+  const intl = useIntl();
   return (
     <div style={{ padding: "5rem 0", margin: "0 2rem" }}>
       <Grid container spacing={3}>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={3}>
           <FilterCard>
             <FormGroup style={{ padding: "1.5rem" }}>
               <TypoGraphy
                 component="p"
                 style={{ fontSize: "1.3rem", textTransform: "capitalize" }}
               >
-                Brand
+                {intl.formatMessage(productsMessage.brand)}
               </TypoGraphy>
               <FormControlLabel
                 control={
@@ -127,7 +130,7 @@ function ProductList() {
             </FormGroup>
           </FilterCard>
         </Grid>
-        <Grid item xs={9} container spacing={3}>
+        <Grid item xs={12} sm={9} container spacing={3}>
           <ProductCard />
 
           <Pagination

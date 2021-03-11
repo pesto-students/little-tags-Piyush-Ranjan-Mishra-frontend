@@ -124,12 +124,15 @@ export default function TitlebarGridList() {
                 </IconButton>
               }
             />
+
             <GridListTileBar
               title={tile.title}
               subtitle={
                 <span>
                   {" "}
-                  {tile.author} <Rating name="read-only" value={4} readOnly />
+                  {tile.author}
+                  <br />{" "}
+                  <Rating name="read-only" value={4} readOnly size="small" />
                 </span>
               }
               actionIcon={

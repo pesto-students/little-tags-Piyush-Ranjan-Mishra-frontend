@@ -2,7 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
-
+import { useIntl } from "react-intl";
+import { productsMessage } from "../../translations";
 const useStyles = makeStyles({
   root: {
     width: 300,
@@ -21,11 +22,11 @@ export default function PriceFilter() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  const intl = useIntl();
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        Price range
+        {intl.formatMessage(productsMessage.priceRange)}
       </Typography>
       <Slider
         value={value}
