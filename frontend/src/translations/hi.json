@@ -33,5 +33,7 @@
   "login.register": "अकाउंट बनाऐ",
   "login.or": "या",
   "login.tnc": "लोगिन करके आप हमारी शर्तों, नीति और कुकीज़ नीति से सहमत हैं",
-  "categories.header":"श्रेणि"
+  "action.remove": "{item} हटाऐ",
+  "action.addToCart": "बैग मे डाले", 
+  "categories.header": "श्रेणि"
 }

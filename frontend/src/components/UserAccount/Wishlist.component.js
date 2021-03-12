@@ -23,10 +23,9 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   pagination: {
-    display: 'flex',
     height: "50px",
     margin: "25px 20px",
-    justifyContent: "center",
+    justifyContent: "flex-end",
   },
 }));
 
@@ -38,13 +37,13 @@ const WishListComponent = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
   const classes = useStyle();
-
+  const page = user?.wishlist?.page ?? 1;
   React.useEffect(() => {
     if (!user) {
       history.push("/login");
     }
     if (!user?.wishlist) dispatch({ type: "WISHLIST" });
-  }, [user, user?.wishlist]);
+  }, [dispatch, history, user, user?.wishlist]);
   const handleChange = (_, value) => {
     dispatch({ type: "WISHLIST", value });
   };
@@ -62,17 +61,18 @@ const WishListComponent = () => {
         </Grid>
         <Grid item xs={isDesktop ? 9 : 12}>
           {user?.wishlist?.length > 0 ? (
-            [1, 2, 3].map((key) => <Singlewishlist tabIndex={key} />)
+            user?.wishlist?.map((key, index) => (
+              <Singlewishlist
+                tabIndex={index+1}
+                product={key}
+              />
+            ))
           ) : (
             <Skeleton animation="wave" variant="rect" height={350} />
           )}
           <div className={classes.pagination}>
             {user?.wishlist ? (
-              <Pagination
-                count={10}
-                page={user?.wishlist?.page ?? 1}
-                onChange={handleChange}
-              />
+              <Pagination count={10} page onChange={handleChange} />
             ) : (
               <Skeleton animation="wave" variant="rect" height={50} />
             )}

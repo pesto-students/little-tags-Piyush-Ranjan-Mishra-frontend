@@ -1,11 +1,30 @@
+import allProducts from "../../data/products";
+
 let wishlistPage = 0;
 let orderlistPage = 0;
-const wishlist = [1, 2, 3];
-const orderlist = [1, 2, 3];
+const wishlist = [...allProducts];
+const orderlist = [];
 const cart = [];
 let userDetail = { name: "Piyush" };
 wishlist.page = wishlistPage;
 orderlist.page = orderlistPage;
+
+const getFilledArray = (arr) => {
+  const array = [];
+  console.log("Filling", arr);
+  array.page = arr.page;
+  let startIndex = arr.page * 3 - 3;
+  startIndex = startIndex > 0 ? startIndex : 0;
+
+  for (let index = startIndex; index < startIndex + 3; index++) {
+    if (arr.length > 3) {
+      array.push(arr[index % arr.length]);
+    } else if (index < arr.length) {
+      array.push(arr[index]);
+    }
+  }
+  return array;
+};
 
 export default function user(state = userDetail, action) {
   switch (action.type) {
@@ -19,15 +38,15 @@ export default function user(state = userDetail, action) {
       return {};
     case "WISHLIST":
       wishlist.page = action.value ?? wishlistPage++;
-      userDetail = { ...userDetail, wishlist };
+      userDetail = { ...userDetail, wishlist: getFilledArray(wishlist) };
       return {
         ...state,
         userDetail,
       };
 
     case "ADD_WISHLIST":
-      wishlist.add(action.value);
-      userDetail = { ...userDetail, wishlist };
+      wishlist.push(action.value);
+      userDetail = { ...userDetail, wishlist: getFilledArray(wishlist) };
       return {
         ...state,
         userDetail,
@@ -37,7 +56,7 @@ export default function user(state = userDetail, action) {
       if (index !== -1) {
         wishlist.splice(index, 1);
       }
-      userDetail = { ...userDetail, wishlist };
+      userDetail = { ...userDetail, wishlist: getFilledArray(wishlist) };
       return {
         ...state,
         userDetail,
@@ -45,23 +64,23 @@ export default function user(state = userDetail, action) {
 
     case "ORDER":
       orderlist.page = action.value ?? wishlistPage++;
-      userDetail = { ...userDetail, orderlist };
+      userDetail = { ...userDetail, orderlist: getFilledArray(orderlist) };
       return {
         ...state,
         userDetail,
       };
     case "ADD_ORDER":
-      orderlist.add(action.value);
-      userDetail = { ...userDetail, orderlist };
+      orderlist.push(action.value);
+      userDetail = { ...userDetail, orderlist: getFilledArray(orderlist) };
       return {
         ...state,
         userDetail,
       };
     case "ADD_TO_CART":
       if (action.value) {
-        cart.add(action.value);
+        cart.push(action.value);
       }
-      userDetail = { ...userDetail, cart };
+      userDetail = { ...userDetail, cart: getFilledArray(cart) };
       return {
         ...state,
         userDetail,
