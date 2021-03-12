@@ -23,9 +23,10 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   pagination: {
+    display: 'flex',
     height: "50px",
     margin: "25px 20px",
-    justifyContent: "flex-end",
+    justifyContent: "center",
   },
 }));
 
