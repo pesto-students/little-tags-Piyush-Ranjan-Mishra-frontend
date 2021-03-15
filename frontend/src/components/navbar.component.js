@@ -17,6 +17,7 @@ import FlagIcon from "@material-ui/icons/Flag";
 import { useIntl } from "react-intl";
 import { navbarMessage, myAccountMessage } from "../translations";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -83,6 +84,7 @@ const NavBarComponent = () => {
   const intl = useIntl();
   const classes = useStyles();
   const store = useSelector((state) => state);
+  const history = useHistory();
   console.log("store", store);
   const dispatch = useDispatch();
   const [showLocale, setShowLocale] = React.useState(null);
@@ -113,9 +115,10 @@ const NavBarComponent = () => {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMenuClose = () => {
+  const handleMenuClose = (link) => {
     setAnchorEl(null);
     handleMobileMenuClose();
+    history.push(link);
   };
 
   const logout = () => {
@@ -158,16 +161,16 @@ const NavBarComponent = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={() => handleMenuClose('/login')}>
         {intl.formatMessage(myAccountMessage.myAccount)}
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={() => handleMenuClose('/login')}>
         {intl.formatMessage(myAccountMessage.myProfile)}
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={() => handleMenuClose('/order')}>
         {intl.formatMessage(myAccountMessage.myOrder)}
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={() => handleMenuClose('/wishlist')}>
         {intl.formatMessage(myAccountMessage.myWishlist)}
       </MenuItem>
       <MenuItem onClick={logout}>
@@ -187,12 +190,13 @@ const NavBarComponent = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem onClick={handleProfileMenuOpen} href='/login'> 
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+
         >
           <AccountCircle />
         </IconButton>
