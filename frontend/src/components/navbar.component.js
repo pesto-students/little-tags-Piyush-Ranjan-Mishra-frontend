@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: "block",
-    
+    color: "white",
   },
   search: {
     position: "relative",
@@ -161,16 +161,16 @@ const NavBarComponent = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={() => handleMenuClose('/login')}>
+      <MenuItem onClick={() => handleMenuClose("/login")}>
         {intl.formatMessage(myAccountMessage.myAccount)}
       </MenuItem>
-      <MenuItem onClick={() => handleMenuClose('/login')}>
+      <MenuItem onClick={() => handleMenuClose("/login")}>
         {intl.formatMessage(myAccountMessage.myProfile)}
       </MenuItem>
-      <MenuItem onClick={() => handleMenuClose('/order')}>
+      <MenuItem onClick={() => handleMenuClose("/order")}>
         {intl.formatMessage(myAccountMessage.myOrder)}
       </MenuItem>
-      <MenuItem onClick={() => handleMenuClose('/wishlist')}>
+      <MenuItem onClick={() => handleMenuClose("/wishlist")}>
         {intl.formatMessage(myAccountMessage.myWishlist)}
       </MenuItem>
       <MenuItem onClick={logout}>
@@ -190,13 +190,12 @@ const NavBarComponent = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={handleProfileMenuOpen} href='/login'> 
+      <MenuItem onClick={handleProfileMenuOpen} href="/login">
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-
         >
           <AccountCircle />
         </IconButton>

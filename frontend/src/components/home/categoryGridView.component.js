@@ -65,7 +65,7 @@ const CategoriesGridView = () => {
               key={tile.img}
               cols={tile.cols || 1}
             >
-              <a href="javascript:void(0)">
+              <a href={`products/${tile.title}`}>
                 <img src={tile.img} alt={tile.title} />
                 <div className={classes.overlay}>
                   <div className={classes.titleName}>{tile.title}</div>

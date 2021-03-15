@@ -111,7 +111,7 @@ export default function TitlebarGridList() {
         spacing={50}
       >
         {tileData.map((tile) => (
-          <GridListTile key={tile.img} style={{}} className={classes.scaleCard}>
+          <GridListTile key={tile.img} style={{}} className={classes.scaleCard} href={`/product/productType/1`}>
             <img src={tile.img} alt={tile.title} xs={12} />
             <GridListTileBar
               style={{ top: 0, background: "#00000000" }}
@@ -124,7 +124,6 @@ export default function TitlebarGridList() {
                 </IconButton>
               }
             />
-
             <GridListTileBar
               title={tile.title}
               subtitle={
