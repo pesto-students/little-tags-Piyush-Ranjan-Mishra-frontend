@@ -1,5 +1,5 @@
 {
-  "nav.home":"Home",
+  "nav.home": "Home",
   "nav.all": "All",
   "nav.men": "Men",
   "nav.women": "Women",
@@ -35,8 +35,9 @@
   "login.mobile": "Mobile Number",
   "login.password": "Password",
   "login.register": "Create your account",
-  "login.or" :"Or",
+  "login.or": "Or",
   "login.tnc": "By signing up you are agreeing to our Terms, Data Policy and Cookies Policy",
-
-  "categories.header":"Categories"
+  "action.remove": "Remove {item}",
+  "action.addToCart": "Add to Cart",
+  "categories.header": "Categories"
 }

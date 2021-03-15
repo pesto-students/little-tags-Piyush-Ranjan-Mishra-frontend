@@ -175,3 +175,14 @@ const categories = {
 };
 
 export const categoriesMessage = defineMessages(categories);
+
+const action = {
+  remove: {
+    id:"action.remove", defaultMessage: "Remove {item}",
+  },
+  addToCart: {
+    id: "action.addToCart", defaultMessage: 'Add to Cart',
+  }
+};
+
+export const actionMessage = defineMessages(action);
