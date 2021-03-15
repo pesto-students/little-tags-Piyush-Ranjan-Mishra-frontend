@@ -7,6 +7,7 @@ import { productsMessage } from "../../translations";
 const useStyles = makeStyles({
   root: {
     width: 300,
+    padding: "20px",
   },
   slider: {},
 });

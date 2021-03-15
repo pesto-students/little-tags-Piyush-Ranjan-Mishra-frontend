@@ -11,7 +11,7 @@ function ProductPage() {
   return (
     <>
       <div>
-        <PageTitle title={intl.formatMessage(productMessage.header)} />
+        {/* <PageTitle title={intl.formatMessage(productMessage.header)} /> */}
         <div>
           <Grid container spacing={0}>
             <Grid item lg={12} className="mx-auto">

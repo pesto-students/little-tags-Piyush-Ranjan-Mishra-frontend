@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexFlow: "flex-end",
-    height: "max-height",
+    height: "80vh",
   },
   body1: {
     textAlign: "center",
@@ -59,10 +59,10 @@ const useStyles = makeStyles((theme) => ({
     color: "grey",
     fontSize: "12px",
   },
-  loginLeft: {
-    backgroundImage: `url(${loginSideImage})`,
-    padding: "3em 0px",
-    width: "100%",
+  login: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 
@@ -77,9 +77,9 @@ const LoginPage = () => {
   };
   return (
     <Grid container className={classes.root}>
-      <Grid item xs={0} sm={2} />
-      <Grid item xs={12} sm={4} className={classes.loginLeft}></Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={0} sm={3} />
+
+      <Grid item xs={12} sm={6} className={classes.login}>
         {/* <div className={classes.root}>
           <div className={classes.grow}></div> */}
         <Container maxWidth="sm">
@@ -139,7 +139,7 @@ const LoginPage = () => {
         </Container>
         {/* </div> */}
       </Grid>
-      <Grid item xs={0} sm={2} />
+      <Grid item xs={0} sm={3} />
     </Grid>
   );
 };
