@@ -16,17 +16,17 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
+    // backgroundColor: fade(theme.palette.common.white, 0.15),
+    // "&:hover": {
+    //   backgroundColor: fade(theme.palette.common.white, 0.25),
+    // },
     color: "black",
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "250px",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
-      width: "600px",
+      width: "480px",
     },
   },
   searchIcon: {
@@ -63,9 +63,7 @@ const SearchText = ({ placeholder, inputProps }) => {
   console.log("items", searchItem);
   return (
     <div className={classes.search}>
-      <div className={classes.searchIcon}>
-        <SearchIcon />
-      </div>
+      <div className={classes.searchIcon}>{/* <SearchIcon /> */}</div>
       <Autocomplete
         id="search-products"
         freeSolo
@@ -105,6 +103,7 @@ const SearchText = ({ placeholder, inputProps }) => {
         renderInput={(params) => (
           <div className={classes.inputInput}>
             <TextField
+              style={{ background: "#4e4e4e", borderRadius: "5px" }}
               {...params}
               InputProps={{
                 ...params.InputProps,
@@ -117,7 +116,7 @@ const SearchText = ({ placeholder, inputProps }) => {
                   </React.Fragment>
                 ),
               }}
-              label={placeholder}
+              label={<SearchIcon />}
               margin="normal"
               variant="outlined"
             />
