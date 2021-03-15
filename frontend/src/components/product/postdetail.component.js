@@ -7,6 +7,7 @@ import Box from "@material-ui/core/Box";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import { useIntl } from "react-intl";
 import { productMessage } from "../../translations";
+import Quantity from "./quantity.component";
 const useStyles = makeStyles((theme) => ({}));
 
 function PostDetail() {
@@ -53,7 +54,6 @@ function PostDetail() {
                 >
                   <Button color="secondary">Red</Button>
                   <Button color="primary">Blue</Button>
-                  {/* <Button>M</Button> */}
                 </ButtonGroup>
               </Box>
             </div>
@@ -70,21 +70,8 @@ function PostDetail() {
             </div>
           </Box>
           <Box pt={4}>
-            <div style={{ display: "inline" }}>
-              <Box mb={2}>
-                <h3 style={{ display: "inline" }}>
-                  {intl.formatMessage(productMessage.quantity)}
-                </h3>
-              </Box>
-              <ButtonGroup
-                size="small"
-                aria-label="small outlined button group"
-              >
-                <Button>+</Button>
-                <p style={{ textAlign: "center" }}>1</p>
-                <Button>-</Button>
-              </ButtonGroup>
-            </div>
+            <Quantity />
+            {/* quantity */}
             <Box mt={3}>
               <Button
                 style={{
