@@ -116,7 +116,7 @@ const SearchText = ({ placeholder, inputProps }) => {
                   </React.Fragment>
                 ),
               }}
-              label={<SearchIcon />}
+              label={<SearchIcon  style={{color: 'white'}}/>}
               margin="normal"
               variant="outlined"
             />
