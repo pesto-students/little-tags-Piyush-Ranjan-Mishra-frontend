@@ -1,5 +1,3 @@
-# Branch to trigger tests on develop
-
 # Contents
 
 - [About](#Vuyit)
@@ -27,6 +25,14 @@ With all the prereqs installed:
 1.  clone this repo,
 2.  `cd` into it and run `yarn install`. This will install all the node dependencies we need for development.
 3.  Run `yarn start` to start the react dev server in specified environment.
+
+# Performance
+
+1. Pre-rendered static website(SSR)
+2. CSS from scratch to for lower bandwidth no bootstrap or material-ui
+3. Implemented lazy loading and skeleton ui
+4. Used webp image for faster rendering
+5. Used different image sizes for mobile to reduce bandwidth charge for users
 
 # Vuyit
 
