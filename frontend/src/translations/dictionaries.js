@@ -222,15 +222,6 @@ const login = {
 
 export const loginMessage = defineMessages(login);
 
-const categories = {
-  header: {
-    id: "categories.header",
-    defaultMessage: "Categories",
-  },
-};
-
-export const categoriesMessage = defineMessages(categories);
-
 const action = {
   remove: {
     id: "action.remove",
