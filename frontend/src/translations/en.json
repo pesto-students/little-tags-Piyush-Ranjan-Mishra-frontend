@@ -39,5 +39,14 @@
   "login.tnc": "By signing up you are agreeing to our Terms, Data Policy and Cookies Policy",
   "action.remove": "Remove {item}",
   "action.addToCart": "Add to Cart",
-  "categories.header": "Categories"
+  "categories.header": "Categories",
+  "product.header": "Product Detail",
+  "product.color": "COLOR",
+  "product.size": "SIZE",
+  "product.quantity": "QUANTITY",
+  "product.shoppingNow": "Shopping Now",
+  "product.likeHeader": "You Might also like",
+  "products.header": "Product List",
+  "products.brand": "Brand",
+  "products.priceRange": "Price Range"
 }

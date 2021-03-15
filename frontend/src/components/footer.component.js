@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     width: "200px",
   },
   social: {
-    width: "90%",
+    width: "70%",
     margin: "10px",
     fontSize: "1.6em",
     display: "flex",
@@ -36,10 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
   socialIcon: {
     margin: "0 10px",
+    color: "white",
   },
   email: {
     backgroundColor: "white",
-    width: "90%",
+    width: "70%",
     padding: "0 10px",
     borderRadius: "10px",
   },
@@ -58,69 +59,75 @@ const FooterComponent = () => {
   return (
     <>
       <div className={classes.root}>
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-          spacing={3}
-        >
-          <Grid item md={4} xs={6}>
-            <div>
-              <h3>{intl.formatMessage(footerMessage.contactUs)}</h3>
-              <p>
-                {intl.formatMessage(footerMessage.phone, { phone: "29837" })}
-              </p>
-              <p>
-                {intl.formatMessage(footerMessage.address, {
-                  address: "dlfkjdf",
-                })}
-              </p>
-              <p>{intl.formatMessage(footerMessage.paymentOption)}</p>
-              <img
-                className={classes.paymentOption}
-                src={payments}
-                alt={intl.formatMessage(footerMessage.paymentOption)}
-              />
-            </div>
-          </Grid>
-          <Grid item md={4} xs={6}>
-            <div>
-              <h3>{intl.formatMessage(footerMessage.links)}</h3>
-              {Object.keys(categoryList).map((key) => (
-                <a href={`/categories:${key}`}>
-                  {" "}
-                  <p>{intl.formatMessage({ id: categoryList[key] })}</p>
-                </a>
-              ))}
-            </div>
-          </Grid>
-          <Grid item md={4} xs={12}>
-            <div>
-              <h3>{intl.formatMessage(footerMessage.subscribeTitle)}</h3>
-              <form className={classes.email} noValidate autoComplete="off">
-                <TextField
-                  className={classes.email}
-                  type="email"
-                  id="standard-basic"
-                  label={intl.formatMessage(footerMessage.subscribeInput)}
+        <Container>
+          <Grid
+            container
+            direction="row"
+            justify="space-evenly"
+            alignItems="center"
+            spacing={3}
+          >
+            <Grid item md={4} xs={6}>
+              <div>
+                <h3>{intl.formatMessage(footerMessage.contactUs)}</h3>
+                <p>
+                  {intl.formatMessage(footerMessage.phone, { phone: "29837" })}
+                </p>
+                <p>
+                  {intl.formatMessage(footerMessage.address, {
+                    address: "dlfkjdf",
+                  })}
+                </p>
+                <p>{intl.formatMessage(footerMessage.paymentOption)}</p>
+                <img
+                  className={classes.paymentOption}
+                  src={payments}
+                  alt={intl.formatMessage(footerMessage.paymentOption)}
                 />
-              </form>
-              <div className={classes.social}>
-                {intl.formatMessage(footerMessage.socialMedia)}
-                <div className={classes.grow}></div>
-                {Object.keys(socialMedia).map((key) => (
-                  <a className={classes.socialIcon} href={key} key>
-                    {socialMedia[key]}
+              </div>
+            </Grid>
+            <Grid item md={4} xs={6}>
+              <div>
+                <h3>{intl.formatMessage(footerMessage.links)}</h3>
+                {Object.keys(categoryList).map((key) => (
+                  <a href={`/categories:${key}`} style={{ color: "white" }}>
+                    {" "}
+                    <p>{intl.formatMessage({ id: categoryList[key] })}</p>
                   </a>
                 ))}
               </div>
-            </div>
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <div>
+                <h3>{intl.formatMessage(footerMessage.subscribeTitle)}</h3>
+                <form className={classes.email} noValidate autoComplete="off">
+                  <TextField
+                    className={classes.email}
+                    type="email"
+                    id="standard-basic"
+                    placeholder={intl.formatMessage(
+                      footerMessage.subscribeInput
+                    )}
+                  />
+                </form>
+                <div className={classes.social}>
+                  {intl.formatMessage(footerMessage.socialMedia)}
+                  <div className={classes.grow}></div>
+                  {Object.keys(socialMedia).map((key) => (
+                    <a className={classes.socialIcon} href={key} key>
+                      {socialMedia[key]}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
-        <Container maxWidth="sm">
-          <a href="/terms">{intl.formatMessage(footerMessage.tnc)}</a>
-          {intl.formatMessage(footerMessage.credit)}
+          <Container maxWidth="sm">
+            <a href="/terms" style={{ color: "white" }}>
+              {intl.formatMessage(footerMessage.tnc)}
+            </a>
+            {intl.formatMessage(footerMessage.credit)}
+          </Container>
         </Container>
       </div>
     </>
