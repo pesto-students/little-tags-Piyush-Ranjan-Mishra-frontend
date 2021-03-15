@@ -1,9 +1,8 @@
-
 import React, { lazy } from "react";
 import Helmet from "react-helmet";
 
 const CartListComponent = lazy(() =>
-  import("../../components/UserAccount/CartList.component")
+  import("../../components/UserAccount/Cartlist.component")
 );
 
 const CartlistPage = () => {

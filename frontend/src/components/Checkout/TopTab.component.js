@@ -1,18 +1,24 @@
 import { emphasize, makeStyles } from "@material-ui/core/styles";
 import { useIntl } from "react-intl";
-import { myAccountMessage } from "../../translations";
+import { checkoutMessage, myAccountMessage } from "../../translations";
 import { useHistory } from "react-router";
 
 const useStyle = makeStyles((theme) => ({
   root: {
-    height: "90%",
-    margin: "20px",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    height: "100px",
+    backgroundColor: "#333",
+    fontSize: "x-large",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "large",
+    },
   },
   tabs: {
     padding: "20px",
-    backgroundColor: "inherit",
-    color: "black",
-    textAlign: "left",
+    color: "grey",
+    textAlign: "center",
     cursor: "pointer",
     "&:hover, &:focus": {
       backgroundColor: "#ddd",
@@ -21,29 +27,27 @@ const useStyle = makeStyles((theme) => ({
       boxShadow: theme.shadows[1],
       backgroundColor: emphasize(theme.palette.grey[300], 0.12),
     },
+    borderRight: "1px solid grey",
+    curson: "pointer",
   },
   selected: {
-    display: "block",
-    backgroundColor: "#f1f1f1",
+    flexGrow: 2.5,
     padding: "20px",
-    color: "black",
-    textAlign: "left",
-    cursor: "pointer",
+    color: "white",
+    textAlign: "center",
+    borderRight: "1px solid grey",
+    borderBottom: "5px solid white",
   },
 }));
 
-const SideList = () => {
+const TopTabBar = () => {
   const classes = useStyle();
   const intl = useIntl();
   const history = useHistory();
   const list = {
-    "/user": myAccountMessage.myAccount,
-    "/cart": myAccountMessage.myCart,
-    "/wishlist": myAccountMessage.myWishlist,
-    "/order": myAccountMessage.myOrder,
-    "/address": myAccountMessage.myAddress,
-    "/payments": myAccountMessage.myPayments,
-    "/logout": myAccountMessage.logout,
+    "/checkout/1": checkoutMessage.cartDetail,
+    "/checkout/2": checkoutMessage.shippingDetail,
+    "/checkout/3": checkoutMessage.paymentDetail,
   };
   const handleClick = (url) => {
     history.push(url);
@@ -54,12 +58,13 @@ const SideList = () => {
       <div className={classes.root}>
         {Object.keys(list).map((el, index) =>
           el === history.location.pathname ? (
-            <div className={classes.selected}>
+            <div className={classes.selected} key={index}>
               {intl.formatMessage(list[el])}
             </div>
           ) : (
             <div
               className={classes.tabs}
+              key={index}
               onClick={() => handleClick(el)}
               href={el}
             >
@@ -72,4 +77,4 @@ const SideList = () => {
   );
 };
 
-export default SideList;
+export default TopTabBar;

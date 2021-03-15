@@ -6,12 +6,14 @@ import Skeleton from "@material-ui/lab/Skeleton";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useIntl } from "react-intl";
-import { myAccountMessage } from "../../translations";
+import { actionMessage, myAccountMessage } from "../../translations";
 import { useHistory } from "react-router";
+import Chip from "@material-ui/core/Chip";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 const BreadCrumbs = lazy(() => import("../Breadcrumb.component"));
-const Singlewishlist = lazy(() =>
-  import("../ListComponent/singlecards/SingleWishlist.component")
+const SingleCartlist = lazy(() =>
+  import("../ListComponent/singlecards/SingleCartlist.component")
 );
 const SideList = lazy(() => import("./Sidelist.component"));
 
@@ -22,15 +24,19 @@ const useStyle = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
   },
-  pagination: {
+  cartButton: {
     display: 'flex',
+    justifyContent: 'flex-end'
+  },
+  pagination: {
+    display: "flex",
     height: "50px",
     margin: "25px 20px",
     justifyContent: "center",
   },
 }));
 
-const WishListComponent = () => {
+const CartListComponent = () => {
   const user = useSelector((state) => state.user.userDetail);
   const dispatch = useDispatch();
   const intl = useIntl();
@@ -38,42 +44,64 @@ const WishListComponent = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
   const classes = useStyle();
-  const page = user?.wishlist?.page ?? 1;
+
   React.useEffect(() => {
     if (!user) {
       history.push("/login");
     }
-    if (!user?.wishlist) dispatch({ type: "WISHLIST" });
-  }, [dispatch, history, user, user?.wishlist]);
-  const handleChange = (_, value) => {
-    dispatch({ type: "WISHLIST", value });
+    if (!user?.cart) dispatch({ type: "CART" });
+    
+  }, [dispatch, history, user, user?.cart]);
+
+  const handlePageChange = (_, value) => {
+    dispatch({ type: "CART", value });
   };
   const breadcrumb = {
     "/": "/",
     "/user": intl.formatMessage(myAccountMessage.myAccount),
-    "/wishlist": intl.formatMessage(myAccountMessage.myWishlist),
+    "/cart": intl.formatMessage(myAccountMessage.myCart),
   };
+  const BuyNowButton = () => (
+    <div className={classes.cartButton}>
+      <Chip
+        onClick={() => {
+          history.push('/checkout/1');
+        }}
+        style={{
+          color: "white",
+          backgroundColor: "green",
+          padding: "10px 20px",
+          marginRight: "20px",
+        }}
+        icon={<ShoppingCartIcon style={{ color: "white" }} />}
+        label={intl.formatMessage(actionMessage.buyNow)}
+      />
+    </div>
+  );
   return (
     <>
       <BreadCrumbs urlList={breadcrumb} />
+      <BuyNowButton />
       <Grid container spacing={3}>
         <Grid item xs={isDesktop ? 3 : 12}>
           <SideList />
         </Grid>
         <Grid item xs={isDesktop ? 9 : 12}>
-          {user?.wishlist?.length > 0 ? (
-            user?.wishlist?.map((key, index) => (
-              <Singlewishlist
-                tabIndex={index+1}
-                product={key}
-              />
+          {user?.cart?.length > 0 ? (
+            user?.cart.map((key, index) => (
+              <SingleCartlist tabIndex={index} product={key} index={index} />
             ))
           ) : (
             <Skeleton animation="wave" variant="rect" height={350} />
           )}
+          <BuyNowButton />
           <div className={classes.pagination}>
-            {user?.wishlist ? (
-              <Pagination count={10} page onChange={handleChange} />
+            {user?.cart ? (
+              <Pagination
+                count={10}
+                page={user?.orderlist?.page ?? 1}
+                onChange={handlePageChange}
+              />
             ) : (
               <Skeleton animation="wave" variant="rect" height={50} />
             )}
@@ -84,4 +112,4 @@ const WishListComponent = () => {
   );
 };
 
-export default WishListComponent;
+export default CartListComponent;

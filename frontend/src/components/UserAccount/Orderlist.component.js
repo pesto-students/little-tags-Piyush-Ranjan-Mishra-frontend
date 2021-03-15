@@ -1,10 +1,88 @@
+import React, { lazy } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Pagination from "@material-ui/lab/Pagination";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Skeleton from "@material-ui/lab/Skeleton";
+import Grid from "@material-ui/core/Grid";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useIntl } from "react-intl";
+import { myAccountMessage } from "../../translations";
+import { useHistory } from "react-router";
+
+const BreadCrumbs = lazy(() => import("../Breadcrumb.component"));
+const SingleOrderlist = lazy(() =>
+  import("../ListComponent/singlecards/SingleOrderlist.component")
+);
+const SideList = lazy(() => import("./Sidelist.component"));
+
+const useStyle = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    "& > * + *": {
+      marginTop: theme.spacing(2),
+    },
+  },
+  pagination: {
+    display: "flex",
+    height: "50px",
+    margin: "25px 20px",
+    justifyContent: "center",
+  },
+}));
+
 const OrderListComponent = () => {
-    return (
-      <>
-        <h1>OrderListComponent
-        </h1>
-      </>
-    );
+  const user = useSelector((state) => state.user.userDetail);
+  const dispatch = useDispatch();
+  const intl = useIntl();
+  const history = useHistory();
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+  const classes = useStyle();
+
+  React.useEffect(() => {
+    if (!user) {
+      history.push("/login");
+    }
+    if (!user?.orderlist) dispatch({ type: "ORDER" });
+    
+  }, [user, user?.orderlist]);
+
+  const handlePageChange = (_, value) => {
+    dispatch({ type: "ORDER", value });
   };
-  
-  export default OrderListComponent;
+  const breadcrumb = {
+    "/": "/",
+    "/user": intl.formatMessage(myAccountMessage.myAccount),
+    "/order": intl.formatMessage(myAccountMessage.myOrder),
+  };
+  return (
+    <>
+      <BreadCrumbs urlList={breadcrumb} />
+      <Grid container spacing={3}>
+        <Grid item xs={isDesktop ? 3 : 12}>
+          <SideList />
+        </Grid>
+        <Grid item xs={isDesktop ? 9 : 12}>
+          {user?.orderlist?.length > 0 ? (
+            user?.orderlist.map((key, index) => <SingleOrderlist tabIndex={index} product={key} />)
+          ) : (
+            <Skeleton animation="wave" variant="rect" height={350} />
+          )}
+          <div className={classes.pagination}>
+            {user?.orderlist ? (
+              <Pagination
+                count={10}
+                page={user?.orderlist?.page ?? 1}
+                onChange={handlePageChange}
+              />
+            ) : (
+              <Skeleton animation="wave" variant="rect" height={50} />
+            )}
+          </div>
+        </Grid>
+      </Grid>
+    </>
+  );
+};
+
+export default OrderListComponent;

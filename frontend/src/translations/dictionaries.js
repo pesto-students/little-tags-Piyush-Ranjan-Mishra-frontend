@@ -189,6 +189,7 @@ const products = {
 
 export const productsMessage = defineMessages(products);
 
+
 export const footerMessage = defineMessages(footer);
 
 const login = {
@@ -222,7 +223,9 @@ const login = {
 
 export const loginMessage = defineMessages(login);
 
+
 const action = {
+  buyNow: { id: "action.buyNow", defaultMessage: "Buy Now" },
   remove: {
     id: "action.remove",
     defaultMessage: "Remove {item}",
@@ -231,6 +234,123 @@ const action = {
     id: "action.addToCart",
     defaultMessage: "Add to Cart",
   },
+  reorder: {
+    id: "action.reorder",
+    defaultMessage: "Reorder",
+  },
+  invoice: {
+    id: "action.invoice",
+    defaultMessage: "Get Bill",
+  },
+  boughtOn: {
+    id: "action.bougth",
+    defaultMessage: "Bought on {date}",
+  },
+  discount: {
+    id: "action.discount",
+    defaultMessage: "You saved {price}",
+  },
+  next: { id: "action.next", defaultMessage: "Next" },
+  pay: { id: "action.pay", defaultMessage: "Pay" },
+  cancel: { id: "action.cancel", defaultMessage: "Cancel" },
 };
 
 export const actionMessage = defineMessages(action);
+
+const checkout = {
+  cartDetail: { id: "checkout.cartDetail", defaultMessage: "Shopping Cart" },
+  shippingDetail: {
+    id: "checkout.shippingDetail",
+    defaultMessage: "Shipping Detail",
+  },
+  paymentDetail: { id: "checkout.paymentDetail", defaultMessage: "Payments" },
+  summaryTitle: { id: "checkout.summaryTitle", defaultMessage: "Summary" },
+  subtotal: { id: "checkout.summarySubTotal", defaultMessage: "Subtotal" },
+  shipping: {
+    id: "checkout.summaryShipping",
+    defaultMessage: "Shipping",
+  },
+  taxes: {
+    id: "checkout.summaryTaxes",
+    defaultMessage: "Taxes",
+  },
+  total: {
+    id: "checkout.summaryTotal",
+    defaultMessage: "Total",
+  },
+};
+
+export const checkoutMessage = defineMessages(checkout);
+
+const shipping = {
+  firstName: { id: "shipping.firstName", defaultMessage: "First Name" },
+  lastName: { id: "shipping.lastName", defaultMessage: "Last Name" },
+  address: {
+    id: "shipping.address",
+    defaultMessage: "Address",
+  },
+  address2: {
+    id: "shipping.address2",
+    defaultMessage: "Address 2/ Landmark",
+  },
+  country: {
+    id: "shipping.country",
+    defaultMessage: "Country",
+  },
+  city: {
+    id: "shipping.city",
+    defaultMessage: "City",
+  },
+  zipcode: {
+    id: "shipping.zipcode",
+    defaultMessage: "Zip/Postal Code",
+  },
+  mobile: {
+    id: "shipping.mobile",
+    defaultMessage: "Phone Number",
+  },
+  freeShipping: {
+    id: "shipping.freeShipping",
+    defaultMessage: "Free Shipping",
+  },
+  freeShippingTime: {
+    id: "shipping.freeShippingTime",
+    defaultMessage: "Between 2-5 working days",
+  },
+  nextDayShipping: {
+    id: "shipping.nextDayShipping",
+    defaultMessage: "Next Day Delivery {price}",
+  },
+  nextDayShippingTime: {
+    id: "shipping.nextDayShippingTime",
+    defaultMessage: "24 hour from checkout",
+  },
+  free: { id: "shipping.free", defaultMessage: "FREE" },
+  submit: {
+    id: "shipping.submit",
+    defaultMessage: "Add Address",
+  },
+};
+
+export const shippingMessage = defineMessages(shipping);
+
+const payments = {
+  cardNumber: {
+    id: "payment.cardNumber",
+    defaultMessage: "Card Number",
+  },
+  expiry: {
+    id: "payment.expiry",
+    defaultMessage: "MM/YY",
+  },
+  cvv: {
+    id: "payment.cvv",
+    defaultMessage: "CVV",
+  },
+  submit: {
+    id: "payment.submit",
+    defaultMessage: "Add Payment",
+  },
+};
+
+export const paymentMessage = defineMessages(payments);

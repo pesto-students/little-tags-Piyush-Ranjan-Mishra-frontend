@@ -1,9 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Carousel from "react-material-ui-carousel";
-import image1 from "../../assets/hero/1.png";
-import image2 from "../../assets/hero/2.png";
-import image3 from "../../assets/hero/3.png";
-import image4 from "../../assets/hero/4.png";
+import image1 from "../../assets/hero/1.webp";
+import image2 from "../../assets/hero/2.webp";
+import image3 from "../../assets/hero/3.webp";
+import image4 from "../../assets/hero/4.webp";
 const useStyles = makeStyles((theme) => ({
   carousel: {
     height: "350px",
@@ -30,7 +30,6 @@ const HeroComponent = () => {
     { image: image4, alt: "Sales" },
   ];
   const onClickItem = (index) => {
-    console.log("hero item clicked", index);
   };
   return (
     <Carousel

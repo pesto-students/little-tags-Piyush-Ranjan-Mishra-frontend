@@ -598,3 +598,13 @@ const allProducts = [
 ];
 
 export default allProducts;
+
+export const randomDate = () => {
+  const start = new Date(2018, 1, 1); //start date
+
+  const end = Date.now(); //end Date
+
+  return new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+};

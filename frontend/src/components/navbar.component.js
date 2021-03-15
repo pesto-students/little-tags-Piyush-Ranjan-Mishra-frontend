@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: "block",
-    color: "white",
+    
   },
   search: {
     position: "relative",
